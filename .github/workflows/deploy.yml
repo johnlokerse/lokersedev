@@ -10,11 +10,17 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: "Replace secret token in Setup.sh"
         uses: jacobtomlinson/gha-find-replace@0.1.2
         with:
           find: "__token__"
           replace: ${{ secrets.PAT }}$
 
+      - name: "Make setup.sh an executable"
+        run: chmod 754 azure-resources/setup.sh
+
       - name: "Run Setup.sh"
-        run: ls -alh
+        run: ./azure-resources/setup.sh
