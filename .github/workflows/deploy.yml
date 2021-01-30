@@ -17,4 +17,4 @@ jobs:
           replace: ${{ secrets.PAT }}$
 
       - name: "Run Setup.sh"
-        run: ./azure-resources/setup.sh
+        run: ls -alh
