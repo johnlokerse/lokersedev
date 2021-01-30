@@ -1,0 +1,20 @@
+name: Deploy to Azure Static WebApp
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Create_Infrastructure:
+    runs-on: self-hosted
+
+    steps:
+      - name: "Replace secret token in Setup.sh"
+        uses: jacobtomlinson/gha-find-replace@0.1.2
+        with:
+          find: "__token__"
+          replace: ${{ secrets.PAT }}$
+
+      - name: "Run Setup.sh"
+        run: ./setup.sh
