@@ -27,8 +27,5 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_SECRET }}$
 
-      - name: "cat"
-        run: cat ./azure-resources/setup.sh
-
       - name: "Run Setup.sh"
         run: ./azure-resources/setup.sh
