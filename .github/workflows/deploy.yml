@@ -19,7 +19,7 @@ jobs:
           find: "__token__"
           replace: ${{ secrets.PAT }}$
 
-      - name: "Make setup.sh an executable"
+      - name: "Make Setup.sh an executable"
         run: chmod 754 azure-resources/setup.sh
 
       - name: Azure Login
