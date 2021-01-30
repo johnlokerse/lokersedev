@@ -3,6 +3,8 @@
 rg="rg-lokersedev"
 webAppName="lokerse-dev-staticapp"
 
+az group create --name $rg --location "westeurope"
+
 az staticwebapp create \ 
 --resource-group $rg \
 --location "westeurope" \
