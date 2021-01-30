@@ -22,5 +22,10 @@ jobs:
       - name: "Make setup.sh an executable"
         run: chmod 754 azure-resources/setup.sh
 
+      - name: Azure Login
+        uses: Azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_SECRET }}
+
       - name: "Run Setup.sh"
         run: ./azure-resources/setup.sh
