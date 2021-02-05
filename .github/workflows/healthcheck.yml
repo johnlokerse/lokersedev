@@ -11,5 +11,5 @@ jobs:
       - id: test
         uses: johnlokerse/website-healthcheck@v2
         with:
-          web-url: "https://www.lokerse.dev"
+          web-url: "https://www.lokerse.de"
           scan-for-text: "lokerse.dev"
