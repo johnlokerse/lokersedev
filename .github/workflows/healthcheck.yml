@@ -1,0 +1,3 @@
+name: "Check for website health and title text"
+
+on: [push]
