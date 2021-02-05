@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Check for status 200 and title text "lokerse.dev"
     steps:
+      - uses: actions/checkout@v2
       - id: test
         uses: actions/website-healthcheck@v1
         with:
