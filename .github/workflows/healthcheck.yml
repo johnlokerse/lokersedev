@@ -1,3 +1,14 @@
 name: "Check for website health and title text"
 
 on: [push]
+
+jobs:
+  health_check_job:
+    runs-on: ubuntu-latest
+    name: Check for status 200 and title text "lokerse.dev"
+    steps:
+      - id: test
+        uses: actions/website-health@v1
+        with:
+          web_url: "https://www.lokerse.dev"
+          scan-for-text: "<title>lokerse.dev</title>"
